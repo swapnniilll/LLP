@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
+    <link href="index.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="d-flex align-items-center p-2">
+        <i class="fas fa-desktop mr-2"></i> <!-- Computer Icon -->
+        <span class="navbar-text">Maharashtra Vidyut Nigam Pvt. Ltd. MVNPL</span>
+        <div class="ml-auto">
+            <button class="btn btn-link text-dark" onclick="minimizeWindow()"><i class="fas fa-minus"></i></button>
+            <button class="btn btn-link text-dark" onclick="maximizeWindow()"><i class="fas fa-square"></i></button>
+            <button class="btn btn-link text-dark" onclick="closeWindow()"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li>
+                    <i class="fas fa-desktop mt-3"></i> <!-- Computer Icon -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="weighment.html">Weighment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="help.html">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="display_report.html">Display Report</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <button type="button" class="btn btn-success btn-sm btnref">Refresh</button>
+    <label class="lab">WB</label>
+    <input type="text" class="vl" id="one">
+
+    <div class="container-fluid mt-4 ml-2">
+            <div class="form-group row">
+                <label for="gatePassNo" class="form-label">Gate Pass No</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control position-relative w-25 d1" id="gatePassNo" placeholder="Enter Gate Pass No">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inOut" class="form-label position-relative l1">IN/OUT</label>
+                <div class="col-sm-12">
+                    <select class="form-control position-relative w-25 ml-5 d2" id="inOut">
+                        <option value="">Select</option>
+                        <option value="in">In</option>
+                        <option value="out">Out</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="doNo" class="form-label position-relative l2">DO No</label>
+                <div class="col-sm-12">
+                    <select class="form-control position-relative w-25 d3" id="doNo">
+                        <option value="">Select</option>
+                        <option value="do1">DO No 1</option>
+                        <option value="do2">DO No 2</option>
+                        <option value="do3">DO No 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="supplier" class="form-label position-relative l3">Supplier</label>
+                <div class="col-sm-12">
+                    <select class="form-control position-relative w-25 d4" id="supplier">
+                        <option value="">Select</option>
+                        <option value="supplier1">Supplier 1</option>
+                        <option value="supplier2">Supplier 2</option>
+                        <option value="supplier3">Supplier 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="product" class="form-label position-relative l4">Product</label>
+                <div class="col-sm-12">
+                    <select class="form-control position-relative w-25 d5" id="product">
+                        <option value="">Select</option>
+                        <option value="product1">Product 1</option>
+                        <option value="product2">Product 2</option>
+                        <option value="product3">Product 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="qtyRemaining" class="form-label position-relative l5">QTY Remaining</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control position-relative w-25 d6" id="qtyRemaining" placeholder="Enter QTY Remaining">
+                </div>
+            </div>
+            
+        
+            <div class="form-group row one">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="getGrossWeight()">Gross Weight</button>
+                <span class="shortcut-label ml-2">F1</span> <!-- F1 Label -->
+                <div class="col-sm-4">
+                    <input type="text" class="form-control position-relative w-25 d7" id="grossWeight" placeholder="0">
+                </div>
+                <div class="bot2">
+                    
+                <span>kg</span>
+                <button type="button" class="btn btn-secondary btn-sm">D</button>
+                <span>Date/Time</span>
+                <input type="text" class="dt1">
+                <input type="text" class="dt3">
+            </div>
+        </div>
+            <div class="form-group row two">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="getTareWeight()">Tare Weight</button>
+                <span class="shortcut-label ml-3">F2</span> <!-- F2 Label -->
+                <div class="col-sm-4">
+                    <input type="text" class="form-control position-relative w-25 d8" id="tareWeight" placeholder="0">
+                </div>
+                <div class="bot">
+                <span>kg</span>
+                <button type="button" class="btn btn-secondary btn-sm">D</button>
+                <span>Date/Time</span>
+                <input type="text" class="dt2">
+                <input type="text" class="dt4">
+            </div>
+        </div>
+            <div class="form-group row three">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="getNetWeight()">Net Weight</button>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control position-relative w-25 d9" id="netWeight" placeholder="0">
+                </div>
+            </div>
+
+            <p>Weighbridge Weight Display</p>
+            <textarea class="form-control a1" rows="2" placeholder="0" style="width: 340px; font-size: 70px;"></textarea>
+          
+            <div id="send">
+            <label class="we1">Weight Diff</label>
+            <input type="text" class="form-control position-relative w-25 we2">
+            <label class="t1">Transporter</label>
+            <select class="form-control position-relative w-25 t2">
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label class="s1">Source</label>
+            <select class="form-control position-relative w-25 s2">
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label class="g1">WCL GatePass</label>
+            <input type="text" class="form-control position-relative w-25 g2">
+            <label class="da1">WCL Date</label>
+            <input type="date" class="form-control position-relative w-25 da2">
+            <label class="o1">WCL OutTime</label>
+            <input type="number" class="form-control position-relative w-25 o2">
+            <label class="gr1">WCL Gross Wt</label>
+            <input type="text" class="form-control position-relative w-25 gr2">
+            <label class="tr1">WCL Tare Wt</label>
+            <input type="text" class="form-control position-relative w-25 tr2">
+            <label class="n1">WCL NetWt</label>
+            <input type="text" class="form-control position-relative w-25 n2">
+            <label class="grad1">Grade</label>
+            <select class="form-control position-relative w-25 grad2">
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label class="rem1">Remarks</label>
+            <select class="form-control position-relative w-25 rem2">
+                <option value="">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <label class="sit1">Site Name :</label>
+        <input type="text" class="sit2">
+        <label class="tru1">Truck No</label>
+        <input type="text" class="tru2">
+        <label class="pan1">PAN NO.</label>
+        <input type="text" class="pan2">
+        <label class="gst1">GSTIN NO.</label>
+        <input type="text" class="gst2">
+        <div class="form-floating">
+            <textarea class="form-control bill" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 550px; width: 380px;"></textarea>
+          </div>
+          <p1>Saved Successfully : Press F3 For New Entry</p1>
+          <div class="form-group row grpbtn">
+            <button type="button" class="btn btn-primary btn-sm mr-2" onclick="createNewEntry()">New</button>
+            <button type="button" class="btn btn-success btn-sm mr-2" onclick="saveEntry()">Save</button>
+            <button type="button" class="btn btn-info btn-sm mr-2" onclick="printEntry()">Print</button>
+            <button type="button" class="btn btn-secondary btn-sm mr-2" onclick="cancelEntry()">Cancel</button>
+            <button type="button" class="btn btn-warning btn-sm mr-2" onclick="findEntry()">Find</button>
+            <button type="button" class="btn btn-danger btn-sm mr-2" onclick="pendingEntry()">Pending</button>
+            <button type="button" class="btn btn-dark btn-sm" onclick="removeEntry()">Remove</button>
+        </div>
+        <div class="para">
+            F1:Gross Weight  F2:Tare Weight  F3:New Slip  F4:Cancel  F5:Find  F6:Pending List  F7:Exit
+        </div>
+        <footer>
+            <p2>2024/11/08   13:42:40                 DATABASE : MS SQL SERVER</p2>
+        </footer>
+        </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for window control -->
+    <script>
+        function minimizeWindow() {
+            alert("Minimize functionality is not supported in web browsers.");
+        }
+
+        function maximizeWindow() {
+            alert("Maximize functionality is not supported in web browsers.");
+        }
+
+        function closeWindow() {
+            window.close(); // This will only work if the window was opened by a script.
+        }
+
+        function getGrossWeight() {
+            alert("Gross Weight calculation triggered.");
+            // Add your gross weight calculation logic here.
+        }
+
+        function getTareWeight() {
+            alert("Tare Weight calculation triggered.");
+            // Add your tare weight calculation logic here.
+        }
+
+        function getNetWeight() {
+            alert("Net Weight calculation triggered.");
+            // Add your net weight calculation logic here.
+        }
+
+        // Detect F1 and F2 key presses
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "F1") {
+                event.preventDefault(); // Prevent default F1 action
+                getGrossWeight(); // Call the gross weight function
+            } else if (event.key === "F2") {
+                event.preventDefault(); // Prevent default F2 action
+                getTareWeight(); // Call the tare weight function
+            }
+        });
+
+        function createNewEntry() {
+    // Logic to clear all input fields and prepare for a new entry
+    document.getElementById("gatePassNo").value = '';
+    document.getElementById("inOut").value = '';
+    document.getElementById("doNo").value = '';
+    document.getElementById("supplier").value = '';
+    document.getElementById("product").value = '';
+    document.getElementById("qtyRemaining").value = '';
+    document.getElementById("grossWeight").value = '';
+    document.getElementById("tareWeight").value = '';
+    document.getElementById("netWeight").value = '';
+    // Clear other fields as necessary
+    alert("New entry created.");
+}
+
+function saveEntry() {
+    // Logic to save the entry (this could involve sending data to a server)
+    alert("Entry saved successfully.");
+}
+
+function printEntry() {
+    // Logic to print the current entry (this could involve formatting the entry for print)
+    window.print();
+}
+
+function cancelEntry() {
+    // Logic to cancel the current entry (could involve clearing fields or navigating away)
+    createNewEntry(); // Reuse the new entry function to clear fields
+    alert("Entry cancelled.");
+}
+
+function findEntry() {
+    // Logic to find an existing entry (this could involve searching through saved data)
+    alert("Find entry functionality is not implemented.");
+}
+
+function pendingEntry() {
+    // Logic to mark the current entry as pending
+    alert("Entry marked as pending.");
+}
+
+function removeEntry() {
+    // Logic to remove the current entry (could involve clearing fields or deleting data)
+    createNewEntry(); // Reuse the new entry function to clear fields
+    alert("Entry removed.");
+}
+    </script>
+
+</body>
+</html>
